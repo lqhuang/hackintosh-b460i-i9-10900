@@ -2,14 +2,14 @@
 
 ## Setup
 
-- mother board: Asus ROG B460i
+- mother board: Asus ROG Strix B460-I Gaming
 - CPU: Intel(R) i9 10900 (Comet Lake)
-- RAM: 2x16GB DDR4 2933Mhz
-- GPU: Asus Tuff 6500XT
+- RAM: 2x16GB DDR4 2933Mhz Crucial Ballistix BL16G32C16U4W.16FE
+- GPU: Asus Tuf 6500XT OC (AMD RDNA2 Navi 2x)
 - SSD: WD Black SN770
 - Ethernet: Intel(R) I219-V
 - Wireless & BT: Intel(R) Wi-Fi AX200
-- Audio: Realtek(R)
+- Audio: Realtek(R) ALC1220P / ALC S1220A
 
 ## System
 
@@ -33,7 +33,5 @@ Enable:
 
 ## Credits
 
-- [aahowe/ROG-B460i_Hackintosh_OpenCore_EFI](https://github.com/aahowe/ROG-B460i_Hackintosh_OpenCore_EFI)
-- [HyramTang/ASUS-ROG-STRIX-B460I-Hackintosh](https://github.com/HyramTang/ASUS-ROG-STRIX-B460I-Hackintosh)
-- [dpneko/-asus-b460i-strix-oc](https://github.com/dpneko/-asus-b460i-strix-oc)
+- [OpenCore-Install-Guide]https://dortania.github.io/OpenCore-Install-Guide/config.plist/comet-lake.html
 - [sqlsec/AsRock-Z490-Steel-Legend-i7-10700](https://github.com/sqlsec/AsRock-Z490-Steel-Legend-i7-10700)

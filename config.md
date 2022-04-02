@@ -24,4 +24,35 @@
 | ResizeAppleGpuBars |  -1   | If your firmware supports increasing GPU Bar sizes (ie Resizable Bar Support), set this to 0. Note: B460i + RX 6500XT are fine to SAM (AMD's Resizable GPU Bar)           |
 | SetupVirtualMap    |  NO   | Fixes SetVirtualAddresses calls to virtual addresses, however broken due to Comet Lake's memory protections. ASUS, Gigabyte and AsRock boards will not boot with this on. |
 
+## DP
 
+### iGPU
+
+UHD630
+
+Headless model
+
+CML -> Comet Lake
+
+Empty framebuffer (CML):
+
+    0x9BC80003 (default)
+
+### Audio
+
+device-id
+
+## UEFI
+
+### Audio
+
+> 如果要让 Duang 和 VoiceOver 等其它音频功能工作, 需要额外下载语音资源包并放置于 `ESP(分区)/EFI/OC/Resources/Audio` 文件夹下。
+>
+> 同时 `AudioDxe` 也需要安装在 Drivers 文件夹中并通过 config 注入
+
+### Output
+
+Ref:
+
+https://github.com/acidanthera/WhateverGreen/blob/master/Manual/FAQ.IntelHD.en.md
+https://github.com/acidanthera/AppleALC/wiki/Supported-codecs
