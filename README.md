@@ -3,11 +3,13 @@
 ## Setup
 
 - mother board: Asus ROG B460i
-- CPU: Intel i9 10900
+- CPU: Intel(R) i9 10900 (Comet Lake)
 - RAM: 2x16GB DDR4 2933Mhz
 - GPU: Asus Tuff 6500XT
-- SSD: WD Black 770
-- Wireless & BT: Intel Wireless AX200
+- SSD: WD Black SN770
+- Ethernet: Intel(R) I219-V
+- Wireless & BT: Intel(R) Wi-Fi AX200
+- Audio: Realtek(R)
 
 ## System
 
