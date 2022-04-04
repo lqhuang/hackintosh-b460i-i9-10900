@@ -43,11 +43,85 @@ Empty framebuffer (CML):
 
     0x9BC80003 (default)
 
+### PCI-E GPU
+
+1. [macOS 12.3 更新後，導致部分 PCI-E GPU 用戶出現問題](https://www.imacpc.net/archives/4642)
+
 ### Audio
 
 device-id
 
 ## Kernel
+
+### Add
+
+Must haves
+
+- Lilu
+  - A kext to patch many processes, required for AppleALC, WhateverGreen, VirtualSMC and many other kexts. Without Lilu, they will not work.
+- VirtualSMC
+  - Emulates the SMC chip found on real macs, without this macOS will not boot.
+
+VirtualSMC Plugins
+
+- SMCProcessor
+  - Used for monitoring CPU temperature, doesn't work on AMD CPU based systems
+- SMCSuperIO
+  - Used for monitoring fan speed, doesn't work on AMD CPU based systems
+- CPU Friend
+  - Dynamic macOS CPU power management data injection
+
+Graphics
+
+- WhateverGreen (Required)
+  - Used for graphics patching, DRM fixes, board ID checks, framebuffer fixes, etc; all GPUs benefit from this kext.
+
+Audio
+
+- AppleALC
+  - Used for AppleHDA patching, allowing support for the majority of on-board sound controllers
+
+Ethernet
+
+- IntelMausi
+  - Required for the majority of Intel NICs
+  - Intel's 82578, 82579, I217, I218 and I219 NICs are officially supported
+
+WiFi and Bluetooth
+
+- AirportItlwm
+  - Adds support for a large variety of Intel wireless cards and works natively in recovery thanks to IO80211Family integration
+  - Requires Apple's Secure Boot to function correctly
+
+  - One of the following steps:
+    - Enable Apple Secure Boot (Please read OpenCore's official manual).
+    - Force IO80211Family to load. 「Supports OpenCore and Clover(not tested)」 (Read the Kernel - Force section in OpenCore's manual for more info).
+
+Extras
+
+- NVMeFix
+  - Used for fixing power management and initialization on non-Apple NVMe
+
+### Quirks
+
+- [ ] AppleXcpmCfgLock
+  - Only needed when CFG-Lock can't be disabled in BIOS
+  - Only applicable for Haswell and newer
+- [x] DisableIoMapper
+  - Needed to get around VT-D if either unable to disable in BIOS or needed for other operating systems
+- [x] DisableLinkeditJettison
+  - Allows Lilu and others to have more reliable performance without `keepsyms=1`
+- [x] PanicNoKextDump
+  - Allows for reading kernel panics logs when kernel panics occur
+- [x] PowerTimeoutKernelPanic: YES
+  - Helps fix kernel panics relating to power changes with Apple drivers in macOS Catalina, most notably with digital audio.
+- SetApfsTrimTimeout: -1
+  - Sets trim timeout in microseconds for APFS filesystems on SSDs, only applicable for macOS 10.14 and newer with problematic SSDs.
+
+References:
+
+1. [Fixing CFG Lock](https://dortania.github.io/OpenCore-Post-Install/misc/msr-lock.html)
+2. [主機板解放CFG LOCK的教程(OC篇)](https://www.imacpc.net/archives/1888)
 
 ## Misc
 
