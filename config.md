@@ -26,6 +26,11 @@
 
 ## DP
 
+Ref:
+
+1. [iGPU PCI config](https://github.com/acidanthera/WhateverGreen/blob/master/Manual/FAQ.IntelHD.en.md)
+2. [ALC device-id](https://github.com/acidanthera/AppleALC/wiki/Supported-codecs)
+
 ### iGPU
 
 UHD630
@@ -44,15 +49,23 @@ device-id
 
 ## UEFI
 
+### APFS
+
+- MinDate: 0
+  - APFS 驱动的版本号基于其发布日期。使用默认数值。随着未来的更新，OpenCore 内置的默认数值也会不断更新。
+- MinVersion: 0
+  - APFS 驱动的版本号和 macOS 版本相关。使用默认数值。随着未来的更新，OpenCore 内置的默认数值也会不断更新。
+
 ### Audio
+
+- PlayChime: Auto
+  - 开机时播放 Mac 特有的风铃的声音。
 
 > 如果要让 Duang 和 VoiceOver 等其它音频功能工作, 需要额外下载语音资源包并放置于 `ESP(分区)/EFI/OC/Resources/Audio` 文件夹下。
 >
 > 同时 `AudioDxe` 也需要安装在 Drivers 文件夹中并通过 config 注入
 
-### Output
+### Quirks
 
-Ref:
-
-https://github.com/acidanthera/WhateverGreen/blob/master/Manual/FAQ.IntelHD.en.md
-https://github.com/acidanthera/AppleALC/wiki/Supported-codecs
+- [x] EnableVectorAcceleration
+- [x] RequestBootVarRouting
