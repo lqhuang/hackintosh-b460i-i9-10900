@@ -630,26 +630,16 @@
                 </dict>
                 <key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
                 <dict>
-                    <key>#csr-active-config (SIP enabled)</key>
-                    <data>AAAAAA==</data>
-                    <key>#csr-active-config (macOS 10.13)</key>
-                    <data>/wMAAA==</data>
-                    <key>#csr-active-config (macOS 10.14/10.15)</key>
-                    <data>/wcAAA==</data>
-                    <key>#csr-active-config (macOS 11)</key>
-                    <data>ZwgAAA==</data>
-                    <key>#csr-active-config (macOS 12)</key>
-                    <data>7w8AAA==</data>
                     <key>ForceDisplayRotationInEFI</key>
                     <integer>0</integer>
                     <key>SystemAudioVolume</key>
                     <data>Rg==</data>
                     <key>boot-args</key>
-                    <string>#dk.e1000=0</string>
+                    <string>-v agdpmod=pikera</string>
                     <key>csr-active-config</key>
                     <data>7w8AAA==</data>
                     <key>prev-lang:kbd</key>
-                    <data>ZW4tVVM6MA==</data>
+                    <string>en-US:0</string>
                     <key>run-efi-updater</key>
                     <string>No</string>
                 </dict>

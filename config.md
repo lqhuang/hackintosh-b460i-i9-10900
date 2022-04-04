@@ -63,6 +63,17 @@ device-id
 
 ## NVRAM
 
+- 7C436110-AB2A-4BBB-A880-FE41995C9F82
+  - `boot-args`:
+    - `-v`: This enables verbose mode
+    - `agdpmod=pikera`: Used for disabling board ID checks on Navi GPUs (RX 5000 & 6000 series), without this you'll get a black screen. **Don't use if you don't have Navi** (ie. Polaris and Vega cards shouldn't use this)
+  - `csr-active-config`: set to `EF0F0000`
+    - SIP enabled: `00000000`
+    - macOS 10.13: `FF030000`
+    - macOS 10.14/10.15: `FF070000`
+    - macOS 11: `67080000`
+    - macOS 12: `EF0F0000`
+
 ## UEFI
 
 ## PlatformInfo
