@@ -24,7 +24,7 @@
 | ResizeAppleGpuBars |  -1   | If your firmware supports increasing GPU Bar sizes (ie Resizable Bar Support), set this to 0. Note: B460i + RX 6500XT are fine to SAM (AMD's Resizable GPU Bar)           |
 | SetupVirtualMap    |  NO   | Fixes SetVirtualAddresses calls to virtual addresses, however broken due to Comet Lake's memory protections. ASUS, Gigabyte and AsRock boards will not boot with this on. |
 
-## DP
+## DeviceProperties
 
 Ref:
 
@@ -47,7 +47,25 @@ Empty framebuffer (CML):
 
 device-id
 
+## Kernel
+
+## Misc
+
+### Security
+
+- ExposeSensitiveData:
+  - `3` 将 OpenCore 的启动路径和版本储存进 NVRAM
+  - `11` 在 `3` 的基础上添加主板 OEM 信息, `HWMonitorSMC2` 和 `NVMeFix` 需要主板 OEM 信息才能正常工作
+- SecureBootModel: Default
+  - Apple 安全启动的机型。
+  - Leave this as `Default` if running macOS Big Sur or newer.
+  - 驱动程序缓存的列表可能不同，因此需要改变 `Add` 或 `Force` 内核驱动程序列表。比如，在这种情况下 `IO80211Family` 不能被注入。
+
+## NVRAM
+
 ## UEFI
+
+## PlatformInfo
 
 ### APFS
 
