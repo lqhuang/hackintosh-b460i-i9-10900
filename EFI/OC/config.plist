@@ -782,7 +782,7 @@
             <key>Generic</key>
             <dict>
                 <key>AdviseFeatures</key>
-                <true/>
+                <false/>
                 <key>MLB</key>
                 <string></string>
                 <key>MaxBIOSVersion</key>
