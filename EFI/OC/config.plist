@@ -206,7 +206,7 @@
                     <key>BundlePath</key>
                     <string>VirtualSMC.kext</string>
                     <key>Comment</key>
-                    <string>V1.2.8 | SMC Emulator</string>
+                    <string>V1.2.9 | SMC Emulator</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
@@ -224,7 +224,7 @@
                     <key>BundlePath</key>
                     <string>WhateverGreen.kext</string>
                     <key>Comment</key>
-                    <string>V1.5.7 | Video Patches</string>
+                    <string>V1.5.8 | Video Patches</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
@@ -404,7 +404,7 @@
                     <key>BundlePath</key>
                     <string>AppleALC.kext</string>
                     <key>Comment</key>
-                    <string>V1.6.9 | Audio Patches</string>
+                    <string>V1.7.0 | Audio Patches</string>
                     <key>Enabled</key>
                     <true/>
                     <key>ExecutablePath</key>
@@ -679,7 +679,7 @@
                     <key>boot-args</key>
                     <string>-v agdpmod=pikera</string>
                     <key>csr-active-config</key>
-                    <data>7w8AAA==</data>
+                    <data>AAAAAA==</data>
                     <key>prev-lang:kbd</key>
                     <string>en-US:0</string>
                     <key>run-efi-updater</key>
