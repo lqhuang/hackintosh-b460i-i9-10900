@@ -5,11 +5,19 @@
 - mother board: Asus ROG Strix B460-I Gaming
 - CPU: Intel(R) i9 10900 (Comet Lake)
 - RAM: 2x16GB DDR4 2933Mhz Crucial Ballistix BL16G32C16U4W.16FE
-- GPU: Asus Tuf 6500XT OC (AMD RDNA2 Navi 2x)
+- GPU: Asus Tuf 6500XT OC (AMD RDNA2 Navi 24)
 - SSD: WD Black SN770
 - Ethernet: Intel(R) I219-V
 - Wireless & BT: Intel(R) Wi-Fi AX200
 - Audio: Realtek(R) ALC1220P / ALC S1220A
+
+Bad news:
+
+Navi 24 (6400, 6500, 6500 XT) and Navi 22 (6700 XT) are not compatible in Monterey!!
+
+Available choices: Navi 23 (6600 and 6600 XT) and Navi 21 (6800, 6800 XT, 6900 XT)
+
+References: [Reddit - RX 6000 Series macOS Compatibility](https://www.reddit.com/r/hackintosh/comments/s357a3/rx_6000_series_macos_compatibility)
 
 ## System
 
