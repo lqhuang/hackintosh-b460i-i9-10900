@@ -75,6 +75,11 @@ VirtualSMC Plugins
   - Used for monitoring fan speed, doesn't work on AMD CPU based systems
 - CPU Friend
   - Dynamic macOS CPU power management data injection
+- [RadeonSensor](https://github.com/aluveitie/RadeonSensor)
+  - Required to read the GPU temperature and requires Lilu
+- [SMCRadeonGPU](https://github.com/aluveitie/RadeonSensor)
+  - Can be used optionally to export GPU temperature to VirtualSMC for
+    monitoring tools to read and requires VirtualSMC
 
 Graphics
 

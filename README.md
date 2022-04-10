@@ -58,7 +58,7 @@ Enable:
 - [x] Hyper-Threading
 - Execute Disable Bit (no found in BIOS settings)
 - [x] EHCI/XHCI Hand-off (Advanced -> USB)
-- [x] OS type: Windows 8.1/10 UEFI Mode
+- [x] OS type: UEFI Mode Others
 - [x] DVMT Pre-Allocated(iGPU Memory): 64MB
 - [x] SATA Mode: AHCI
 
@@ -74,3 +74,4 @@ Enable:
 - [sqlsec/AsRock-Z490-Steel-Legend-i7-10700](https://github.com/sqlsec/AsRock-Z490-Steel-Legend-i7-10700)
 - [LightFocus/ASUS-ROG-STRIX-B460I-Hackintosh](https://github.com/LightFocus/ASUS-ROG-STRIX-B460I-Hackintosh)
 - [yqlbu/asus-b460i-strix-oc-efi](https://github.com/yqlbu/asus-b460i-strix-oc-efi)
+- [Hackintool 使用教程及插入姿势](https://blog.daliansky.net/Intel-FB-Patcher-tutorial-and-insertion-pose.html)

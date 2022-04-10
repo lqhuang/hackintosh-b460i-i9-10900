@@ -20,10 +20,15 @@
 - [x] System Integrity Protection: Disabled
   - Fixed: adjust `csr-active-config` variable in NVRAM section
 
-## (Enforced) Black screen after `IOConsoleUsers: gIOScreenLock...` on Navi GPU
+## (Enforced) Black screen after startup on Navi GPU
 
-- Add agdpmod=pikera to boot args
-- Append GPU configuration in DeviceProperties section
+- Add `agdpmod=pikera` to boot args
+- Try to remove `-v` in boot args, it may conflict to `agdpmod=pikera` (don't
+  know why yet)
+- ~~Append GPU configuration in DeviceProperties section~~
+
+References:
+<https://www.tonymacx86.com/threads/success-xfx-rx-6600-xt-graphics-card-in-monterey-12-2-1.319128/>
 
 ## (Enforced) Bluetooth
 
@@ -87,7 +92,8 @@ Hardware acceleration is fully supported
 
 Reference:
 
-https://dortania.github.io/OpenCore-Post-Install/misc/rtc.html
+1. https://dortania.github.io/OpenCore-Post-Install/misc/rtc.html
+2. https://blog.xjn819.com/post/rtc-issues-related-to-oc.html
 
 ## (Optional) No Volume/Brightness control on external monitors
 
@@ -198,3 +204,5 @@ References:
 
 1. https://dortania.github.io/Getting-Started-With-ACPI/Universal/smbus-methods/manual.html
 2. https://dortania.github.io/Getting-Started-With-ACPI/Manual/compile.html
+
+## (Suggestive) USB Fixes
