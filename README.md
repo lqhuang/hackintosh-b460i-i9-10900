@@ -13,11 +13,14 @@
 
 Bad news:
 
-Navi 24 (6400, 6500, 6500 XT) and Navi 22 (6700 XT) are not compatible in Monterey!!
+Navi 24 (6400, 6500, 6500 XT) and Navi 22 (6700 XT) are not compatible in
+Monterey!!
 
-Available choices: Navi 23 (6600 and 6600 XT) and Navi 21 (6800, 6800 XT, 6900 XT)
+Available choices: Navi 23 (6600 and 6600 XT) and Navi 21 (6800, 6800 XT, 6900
+XT)
 
-References: [Reddit - RX 6000 Series macOS Compatibility](https://www.reddit.com/r/hackintosh/comments/s357a3/rx_6000_series_macos_compatibility)
+References:
+[Reddit - RX 6000 Series macOS Compatibility](https://www.reddit.com/r/hackintosh/comments/s357a3/rx_6000_series_macos_compatibility)
 
 ## System
 
@@ -58,6 +61,12 @@ Enable:
 - [x] OS type: Windows 8.1/10 UEFI Mode
 - [x] DVMT Pre-Allocated(iGPU Memory): 64MB
 - [x] SATA Mode: AHCI
+
+## Performance tools
+
+- [iStat Menus](https://bjango.com/mac/istatmenus)
+- [Sensei](https://sensei.app)
+- [Intel® Power Gadget](https://www.intel.com/content/www/us/en/developer/articles/tool/power-gadget.html)
 
 ## Credits
 
