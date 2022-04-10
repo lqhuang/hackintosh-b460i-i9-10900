@@ -5,6 +5,7 @@
 - [x] Bluetooth cannot open, Address: no found
   - Fixed: Use `IntelBluetoothFirmware.kext` and `BlueToolFixup.kext`
 - [x] Wi-Fi 802.11ax no found
+  - Fixed: Use `IntelBluetoothFirmware.kext` and `BlueToolFixup.kext`
 - [x] GPU driver: Unusable while minimizing / Maximizing Windows; Can not
       recognize GPU vendor
   - Fixed: 1. Switch RX 6500 XT to RX 6600; 2. Add `DeviceProperties` PCI
@@ -12,12 +13,17 @@
 - [x] NVMe SSD Trim: not found
   - Fixed: Use Trim Patch from Hackintools
 - [x] No Audio device found
-  - Fixed: Work well after solving GPU driver
+  - Fixed: Work well after solving GPU issue
 - [x] Monitor cannot sleep off (windows frezon, but require login after waking
       up)
-  - Fixed: Work well after solving GPU driver
+  - Fixed: Work well after solving GPU issue
 - [x] System Integrity Protection: Disabled
   - Fixed: adjust `csr-active-config` variable in NVRAM section
+
+## (Enforced) Black screen after `IOConsoleUsers: gIOScreenLock...` on Navi GPU
+
+- Add agdpmod=pikera to boot args
+- Append GPU configuration in DeviceProperties section
 
 ## (Enforced) Bluetooth
 
@@ -77,14 +83,7 @@ Hardware acceleration is fully supported
 - AudioSupport: set this to `True`
 - PlayChime: set this to `Enabled` (We use `Auto` here)
 
-## Fixing SMBus support (SSDT-SBUS-MCHC)
-
-References:
-
-1. https://dortania.github.io/Getting-Started-With-ACPI/Universal/smbus-methods/manual.html
-2. https://dortania.github.io/Getting-Started-With-ACPI/Manual/compile.html
-
-## Fixing RTC write issues
+## (Enforced) Fixing RTC write issues
 
 Reference:
 
@@ -114,13 +113,13 @@ and newer**.
 
 Reference: <https://dortania.github.io/OpenCore-Post-Install/universal/pm.html>
 
-## Enabling X86PlatformPlugin
+### Enabling X86PlatformPlugin
 
 To start, grab
 [IORegistryExplorer](https://github.com/khronokernel/IORegistryClone/blob/master/ioreg-302.zip)
 and look for `AppleACPICPU` to check it works well or not.
 
-## Using CPU Friend
+### Using CPU Friend
 
 To start, we're gonna need a couple things:
 
@@ -130,7 +129,7 @@ To start, we're gonna need a couple things:
 
 Download `CPUFriendFriend` and Run `CPUFriendFriend.command`
 
-### LFM: Low Frequency Mode
+#### LFM: Low Frequency Mode
 
 When you first open up CPUFriendFriend, you'll be greeted with a prompt for
 choosing your LFM value. This can be seen as the floor of your CPU, or the
@@ -144,7 +143,7 @@ your value appropriately
 Here we use `0A` as LFM Value for i9 10900 (28 \* 1000Mhz = 2.8GHz base
 frequency)
 
-### EPP: Energy Performance Preference
+#### EPP: Energy Performance Preference
 
 Next up is the Energy Performance Preference, EPP. This tells macOS how fast to
 turbo up the CPU to its full clock. 00 will tell macOS to let the CPU go as fast
@@ -162,7 +161,7 @@ the middle. Below chart can help out a bit:
 
 We set to `00` here for desktop platform (same to iMac).
 
-## Performance Bias
+#### Performance Bias
 
 Perf Bias is a register on many modern Intel Processors which sets a policy
 preference for performance vs energy savings. Perf Bias is a configurable dial
@@ -171,7 +170,7 @@ bias to help influence how the processor utilizes C and P states.
 
 We use `01` for this value (same to moder iMac).
 
-## Cleanup
+#### Cleanup
 
 After compiled, some result files were provided:
 
@@ -186,3 +185,16 @@ If you do choose to use `ssdt_data.aml`, note that `SSDT-PLUG` is no longer
 needed. However the setup for this SSDT is broken on HEDT platforms like X99 and
 X299, so dortania highly recommend `SSDT-PLUG` with `CPUFriendDataProvider.kext`
 instead.
+
+## (Suggestive) Fixing SMBus support (SSDT-SBUS-MCHC)
+
+We are lucky! Our ACPI path (`/PCI01@0/SBUS@1F,4`) of serial bus controller
+(SMBus device) in mother board is totally the same to the default setup.
+
+So we just use precompiled `SSDT-SBUS-MCHC.aml` file from OpenCore release
+without custom and recompiling. Check references if you need to recompile.
+
+References:
+
+1. https://dortania.github.io/Getting-Started-With-ACPI/Universal/smbus-methods/manual.html
+2. https://dortania.github.io/Getting-Started-With-ACPI/Manual/compile.html

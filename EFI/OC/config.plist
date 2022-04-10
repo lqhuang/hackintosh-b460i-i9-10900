@@ -52,7 +52,7 @@
                     <key>Comment</key>
                     <string>Enables AppleSMBus and Memory Controller Support</string>
                     <key>Enabled</key>
-                    <false/>
+                    <true/>
                     <key>Path</key>
                     <string>SSDT-SBUS-MCHC.aml</string>
                 </dict>
