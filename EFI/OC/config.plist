@@ -154,6 +154,17 @@
                     <key>name</key>
                     <string>ATY,Henbury</string>
                 </dict>
+                <key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
+                <dict>
+                    <key>@0,name</key>
+                    <string>ATY,Henbury</string>
+                    <key>@1,name</key>
+                    <string>ATY,Henbury</string>
+                    <key>@2,name</key>
+                    <string>ATY,Henbury</string>
+                    <key>@3,name</key>
+                    <string>ATY,Henbury</string>
+                </dict>
                 <key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
                 <dict>
                     <key>device_type</key>
@@ -169,10 +180,12 @@
                     <data>AwDImw==</data>
                     <key>AAPL,slot-name</key>
                     <string>Built-In</string>
+                    <key>comment</key>
+                    <string>headless mode</string>
                     <key>device_type</key>
                     <string>Display Controller</string>
                     <key>model</key>
-                    <string>Intel UHD Graphics 630 (Headless)</string>
+                    <string>Intel UHD Graphics 630</string>
                 </dict>
             </dict>
             <key>Delete</key>

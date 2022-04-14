@@ -90,6 +90,8 @@ Hardware acceleration is fully supported
 
 ## (Enforced) Fixing RTC write issues
 
+Set `Wait on F1 if err` to `False` in BIOS settings.
+
 Reference:
 
 1. https://dortania.github.io/OpenCore-Post-Install/misc/rtc.html
@@ -205,4 +207,33 @@ References:
 1. https://dortania.github.io/Getting-Started-With-ACPI/Universal/smbus-methods/manual.html
 2. https://dortania.github.io/Getting-Started-With-ACPI/Manual/compile.html
 
-## (Suggestive) USB Fixes
+## (Suggestive) Check sleep issue
+
+To find which device has affectd your suspend.
+
+```
+log show --last 1d | grep "Wake reason"
+```
+
+## (Enforced) USB Fixes
+
+Why you need to remap USB port:
+
+- macOS is very bad at guessing what kind of ports you have
+- Some ports may run below their rated speed(3.1 ports running at 2.0)
+- Bluetooth not working
+- Certain services like Handoff may not work correctly
+- Sleep may break
+- Broken Hot-Plug
+
+## Intel USB mapping
+
+Our hardware is quite newer, so
+[renaming](https://dortania.github.io/OpenCore-Post-Install/usb/system-preparation.html#checking-what-renames-you-need)
+is not necessary. Just jump to USB mapping directly.
+
+References:
+
+1. https://dortania.github.io/OpenCore-Post-Install/usb
+2. https://github.com/corpnewt/USBMap
+3. https://apple.sqlsec.com/6-实用姿势/6-1.html
