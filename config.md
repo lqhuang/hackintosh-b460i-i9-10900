@@ -47,6 +47,21 @@ Empty framebuffer (CML):
 
     0x9BC80003 (default)
 
+Device ID: 0x9BC5
+
+```
+0x9BC5 -> 00 00 9B C5
+
+00 00 9B C5 -> C5 9B 00 00
+
+C59B0000 = device-id
+```
+
+References:
+
+1. [Intel iGPU Patching](https://dortania.github.io/OpenCore-Post-Install/gpu-patching/intel-patching/#device-id-explainer)
+2. [Intel® Core™ i9-10900 Processor](https://ark.intel.com/content/www/us/en/ark/products/199328/intel-core-i910900-processor-20m-cache-up-to-5-20-ghz.html)
+
 ### PCI-E GPU
 
 1. [macOS 12.3 更新後，導致部分 PCI-E GPU 用戶出現問題](https://www.imacpc.net/archives/4642)
