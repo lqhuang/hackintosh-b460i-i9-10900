@@ -167,7 +167,7 @@ the middle. Below chart can help out a bit:
 | 0x80-0xBF | Balance power       |
 | 0xC0-0xFF | Max Power Saving    |
 
-We set to `00` here for desktop platform (same to iMac).
+We set to `00` here for desktop platform (same to modern iMac).
 
 #### Performance Bias
 
@@ -176,14 +176,15 @@ preference for performance vs energy savings. Perf Bias is a configurable dial
 ranging from 0 (Performance) to 15 (Energy Savings). The processor utilizes perf
 bias to help influence how the processor utilizes C and P states.
 
-We use `01` for this value (same to moder iMac).
+We use `01` for this value (same to modern iMac).
 
 #### Cleanup
 
 After compiled, some result files were provided:
 
 - CPUFriendDataProvider.kext
-- Mac-AF89B6D9451A490B.plist
+- Mac-AF89B6D9451A490B.plist (my tunned X86PlatformPlugin configuration, has
+  been embedded in `CPUFriendDataProvider.kext`)
 - ssdt_data.aml
 - ssdt_data.dsl
 
@@ -226,7 +227,7 @@ Why you need to remap USB port:
 - Sleep may break
 - Broken Hot-Plug
 
-## Intel USB mapping
+## (Suggestive) Intel USB mapping
 
 Our hardware is quite newer, so
 [renaming](https://dortania.github.io/OpenCore-Post-Install/usb/system-preparation.html#checking-what-renames-you-need)
