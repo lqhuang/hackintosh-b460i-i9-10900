@@ -188,9 +188,73 @@ References:
     - macOS 11: `67080000`
     - macOS 12: `EF0F0000`
 
-## UEFI
+### Delete
+
+- LegacyEnable: NO
+  - Allows for NVRAM to be stored on nvram.plist, needed for systems without
+    native NVRAM
+- LegacyOverwrite: NO
+  - Permits overwriting firmware variables from nvram.plist, only needed for
+    systems without native NVRAM
+- LegacySchema
+  - Used for assigning NVRAM variables, used with LegacyEnable set to YES
+- WriteFlash: YES
+  - Enables writing to flash memory for all added variables.
 
 ## PlatformInfo
+
+## UEFI
+
+### Serial number
+
+Choose correct and closest `SMBIOS` info depended on your hardware
+
+| SMBIOS   | Hardware                                  |
+| -------- | ----------------------------------------- |
+| iMac20,1 | i7-10700K and lower(ie. 8 core and lower) |
+| iMac20,2 | i9-10850K and higher(ie. 10 core)         |
+
+Must required fields for iServices:
+
+- `SystemProductName`
+- `SystemSerialNumber`
+- `MLB`
+- `ROM` (mac address of NIC device)
+- `SystemUUID`
+
+**Note**: Reminder that you want either an invalid serial or valid serial
+numbers but those not in use, you want to get a message back like: "Invalid
+Serial" or "Purchase Date not Validated"
+
+### Generic
+
+- AdviseFeatures: NO
+  - Used for when the EFI partition isn't first on the Windows drive
+- MaxBIOSVersion: NO
+  - Sets BIOS version to Max to avoid firmware updates in Big Sur+, mainly
+    applicable for genuine Macs.
+- ProcessorType: 0
+  - Set to 0 for automatic type detection, however this value can be overridden
+    if desired. See AppleSmBios.h
+  - (opens new window) for possible values
+- SpoofVendor: YES
+  - Swaps vendor field for Acidanthera, generally not safe to use Apple as a
+    vendor in most case
+- SystemMemoryStatus: Auto
+  - Sets whether memory is soldered or not in SMBIOS info, purely cosmetic and
+    so we recommend `Auto`
+- UpdateDataHub: YES
+  - Update Data Hub fields
+- UpdateNVRAM: YES
+  - Update NVRAM fields
+- UpdateSMBIOS: YES
+  - Updates SMBIOS fields
+- UpdateSMBIOSMode: Create
+  - Replace the tables with newly allocated EfiReservedMemoryType, use `Custom`
+    on Dell laptops requiring `CustomSMBIOSGuid` quirk
+  - Setting to `Custom` with `CustomSMBIOSGuid` quirk enabled can also disable
+    SMBIOS injection into "non-Apple" OSes however we do not endorse this method
+    as it breaks Bootcamp compatibility. Use at your own risk
 
 ### APFS
 

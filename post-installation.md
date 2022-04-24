@@ -98,12 +98,25 @@ Refernces:
 
 ## (Enforced) Fixing RTC write issues
 
-Set `Wait on F1 if err` to `False` in BIOS settings.
+It's really a painful process :(
+
+1. Add `RTCMemoryFixup.kexts`
+2. Finding bad RTC region via `boot-arg`: `rtcfx_exclude=00-FF` in a binary
+   search fashion
+   - wish you a lucky dog!!!
+   - **NOTE**: Reboot twice after updating protect regions is necessary to make
+     sure updated value works well.
+   - My exactly mached area is `58-59`
+3. Add permanent RTC fixup blacklist to `NVRAM` -> `Add` ->
+   `4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102` -> `rtc-blacklist`
+   - add our bad RTC region as an array, so `rtcfx_exclude=85-86` will become
+     `rtc-blacklist | Data | 8586`
 
 Reference:
 
 1. https://dortania.github.io/OpenCore-Post-Install/misc/rtc.html
-2. https://blog.xjn819.com/post/rtc-issues-related-to-oc.html
+2. https://github.com/acidanthera/RTCMemoryFixup
+3. https://blog.xjn819.com/post/rtc-issues-related-to-oc.html
 
 ## (Optional) No Volume/Brightness control on external monitors
 
@@ -244,3 +257,20 @@ References:
 1. https://dortania.github.io/OpenCore-Post-Install/usb
 2. https://github.com/corpnewt/USBMap
 3. https://apple.sqlsec.com/6-实用姿势/6-1.html
+
+## (Suggestive) Fixing iMessage and other services with OpenCore
+
+The following items will be created below and are required to use iServices:
+
+- MLB
+- ROM
+- SystemProductName
+- SystemSerialNumber
+- SystemUUID
+
+For `ROM`, use the MAC Address of the network interface, lowercase, and without
+`:`.
+
+References:
+
+1. https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html
