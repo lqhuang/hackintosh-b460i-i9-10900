@@ -154,17 +154,6 @@
                     <key>name</key>
                     <string>ATY,Henbury</string>
                 </dict>
-                <key>PciRoot(0x0)/Pci(0x1,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)/Pci(0x0,0x0)</key>
-                <dict>
-                    <key>@0,name</key>
-                    <string>ATY,Henbury</string>
-                    <key>@1,name</key>
-                    <string>ATY,Henbury</string>
-                    <key>@2,name</key>
-                    <string>ATY,Henbury</string>
-                    <key>@3,name</key>
-                    <string>ATY,Henbury</string>
-                </dict>
                 <key>PciRoot(0x0)/Pci(0x1F,0x3)</key>
                 <dict>
                     <key>device_type</key>
@@ -737,7 +726,7 @@
                 <key>4D1FDA02-38C7-4A6A-9CC6-4BCCA8B30102</key>
                 <dict>
                     <key>rtc-blacklist</key>
-                    <data></data>
+                    <data>WFk=</data>
                 </dict>
                 <key>7C436110-AB2A-4BBB-A880-FE41995C9F82</key>
                 <dict>
