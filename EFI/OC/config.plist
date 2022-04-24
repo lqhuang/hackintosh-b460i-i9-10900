@@ -180,14 +180,14 @@
                     <data>AwDImw==</data>
                     <key>AAPL,slot-name</key>
                     <string>Built-In</string>
+                    <key>comment</key>
+                    <string>headless mode</string>
                     <key>device-id</key>
                     <data>xZsAAA==</data>
                     <key>device_type</key>
                     <string>Display Controller</string>
                     <key>model</key>
                     <string>Intel UHD Graphics 630</string>
-                    <key>comment</key>
-                    <string>headless mode</string>
                 </dict>
             </dict>
             <key>Delete</key>
@@ -248,6 +248,24 @@
                     <string></string>
                     <key>MinKernel</key>
                     <string>12.0.0</string>
+                    <key>PlistPath</key>
+                    <string>Contents/Info.plist</string>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>BundlePath</key>
+                    <string>RTCMemoryFixup.kext</string>
+                    <key>Comment</key>
+                    <string>V1.0.7</string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>ExecutablePath</key>
+                    <string>Contents/MacOS/RTCMemoryFixup</string>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string></string>
                     <key>PlistPath</key>
                     <string>Contents/Info.plist</string>
                 </dict>
