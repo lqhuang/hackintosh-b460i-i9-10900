@@ -5,6 +5,7 @@
 - Mother board: Asus ROG Strix B460-I Gaming
 - CPU: Intel(R) i9 10900 (Comet Lake)
 - RAM: 2x16GB DDR4 2933Mhz Crucial Ballistix BL16G32C16U4W.16FE
+- ~~GPU: Asus Tuf RX 6500 XT (AMD RDNA2 Navi 24)~~
 - GPU: Sapphire RX 6600 (AMD RDNA2 Navi 23)
 - SSD: WD Black SN770
 - Ethernet: Intel(R) I219-V
@@ -19,7 +20,7 @@ Monterey!!
 Available choices: Navi 23 (6600 and 6600 XT) and Navi 21 (6800, 6800 XT, 6900
 XT)
 
-References:
+Reference:
 [Reddit - RX 6000 Series macOS Compatibility](https://www.reddit.com/r/hackintosh/comments/s357a3/rx_6000_series_macos_compatibility)
 
 ## System
@@ -62,11 +63,22 @@ Enable:
 - [x] DVMT Pre-Allocated(iGPU Memory): 64MB
 - [x] SATA Mode: AHCI
 
+## Available features
+
+- [x] macOS 12 Monterey
+- [x] auto sleeping and normal wakeup
+- [x] Wi-Fi & Bluethooth
+- [x] AirDrop / Sidecar / Universal control
+- [x] HEVC Decoder & Encoder
+- [x] HiDPI for dual 4K monitors
+
 ## Performance tools
 
 - [iStat Menus](https://bjango.com/mac/istatmenus)
 - [Sensei](https://sensei.app)
 - [Intel® Power Gadget](https://www.intel.com/content/www/us/en/developer/articles/tool/power-gadget.html)
+- [VideoProc](https://www.videoproc.com/)
+- [Geekbench 5](https://www.geekbench.com/)
 
 ## Credits
 

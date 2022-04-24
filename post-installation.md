@@ -27,7 +27,7 @@
   know why yet)
 - ~~Append GPU configuration in DeviceProperties section~~
 
-References:
+Reference:
 <https://www.tonymacx86.com/threads/success-xfx-rx-6600-xt-graphics-card-in-monterey-12-2-1.319128/>
 
 ## (Enforced) Bluetooth
@@ -42,7 +42,9 @@ References:
 - https://github.com/OpenIntelWireless/IntelBluetoothFirmware/releases
 - https://github.com/acidanthera/BrcmPatchRAM
 
-## Testing Hardware Acceleration and Decoding
+## GPU patching and acceleration
+
+### Testing Hardware Acceleration and Decoding
 
 So before we can get started with fixing DRM, we need to make sure your hardware
 is working. The best way to check is by running
@@ -53,6 +55,12 @@ My output:
 ```
 Hardware acceleration is fully supported
 ```
+
+### Test iGPU in headless mode
+
+Refernces:
+
+1. [iGPU in headless mode: How do I know if it's working?](https://www.reddit.com/r/hackintosh/comments/jkau4x/igpu_in_headless_mode_how_do_i_know_if_its_working/)
 
 ## (Optional) Setting up Boot-chime with AudioDxe
 
@@ -183,8 +191,8 @@ We use `01` for this value (same to modern iMac).
 After compiled, some result files were provided:
 
 - CPUFriendDataProvider.kext
-- Mac-AF89B6D9451A490B.plist (my tunned X86PlatformPlugin configuration, has
-  been embedded in `CPUFriendDataProvider.kext`)
+- Mac-AF89B6D9451A490B.plist (Tunned X86PlatformPlugin configuration, has been
+  embedded in `CPUFriendDataProvider.kext`)
 - ssdt_data.aml
 - ssdt_data.dsl
 
@@ -227,11 +235,9 @@ Why you need to remap USB port:
 - Sleep may break
 - Broken Hot-Plug
 
-## (Suggestive) Intel USB mapping
-
-Our hardware is quite newer, so
+Do Intel USB mapping: Our hardware is quite newer, so
 [renaming](https://dortania.github.io/OpenCore-Post-Install/usb/system-preparation.html#checking-what-renames-you-need)
-is not necessary. Just jump to USB mapping directly.
+is not necessary. Just jump to USB mapping section directly.
 
 References:
 
