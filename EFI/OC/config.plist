@@ -334,6 +334,24 @@
                     <key>Arch</key>
                     <string>x86_64</string>
                     <key>BundlePath</key>
+                    <string>USBMap.kext</string>
+                    <key>Comment</key>
+                    <string>V1.0</string>
+                    <key>Enabled</key>
+                    <true/>
+                    <key>ExecutablePath</key>
+                    <string></string>
+                    <key>MaxKernel</key>
+                    <string></string>
+                    <key>MinKernel</key>
+                    <string></string>
+                    <key>PlistPath</key>
+                    <string>Contents/Info.plist</string>
+                </dict>
+                <dict>
+                    <key>Arch</key>
+                    <string>x86_64</string>
+                    <key>BundlePath</key>
                     <string>AirportBrcmFixup.kext</string>
                     <key>Comment</key>
                     <string>V2.1.4</string>
@@ -652,8 +670,6 @@
                 <integer>2147483648</integer>
                 <key>LogModules</key>
                 <string></string>
-                <key>SerialInit</key>
-                <false/>
                 <key>SysReport</key>
                 <false/>
                 <key>Target</key>
@@ -746,7 +762,7 @@
                     <key>SystemAudioVolume</key>
                     <data>Rg==</data>
                     <key>boot-args</key>
-                    <string>agdpmod=pikera brcmfx-country=#a</string>
+                    <string>agdpmod=pikera brcmfx-country=CN</string>
                     <key>csr-active-config</key>
                     <data>AAAAAA==</data>
                     <key>prev-lang:kbd</key>
