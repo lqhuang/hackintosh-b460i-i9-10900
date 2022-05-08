@@ -231,11 +231,20 @@ References:
 
 ## (Suggestive) Check sleep issue
 
-To find which device has affectd your suspend.
+To find which devices have affectd your suspend/resume process:
 
 ```
-log show --last 1d | grep "Wake reason"
+log show --last 7d | grep "Wake reason"
 ```
+
+or
+
+```
+pmset -g log | grep -e "Sleep.*due to" -e "Wake.*due to"
+```
+
+1. [GPRW/UPRW/LANC Instant Wake Patch](https://dortania.github.io/OpenCore-Post-Install/usb/misc/instant-wake.html)
+2. [使用 OpenCore 引导黑苹果 - 3.7 睡眠即醒的相关问题](https://blog.xjn819.com/post/opencore-guide.html)
 
 ## (Enforced) USB Fixes
 
