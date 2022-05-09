@@ -116,16 +116,11 @@ Ethernet
 
 WiFi and Bluetooth
 
-- AirportItlwm
-  - Adds support for a large variety of Intel wireless cards and works natively
-    in recovery thanks to IO80211Family integration
-  - Requires Apple's Secure Boot to function correctly
-  - One of the following steps:
-    - Enable Apple Secure Boot (Please read OpenCore's official manual).
-    - Force IO80211Family to load. (Read the Kernel - Force section in
-      OpenCore's manual for more info).
-- IntelBluetoothFirmware
-  - For intel bluethooth firmware
+- AirportBrcmFixup
+  - An open source kernel extension providing a set of patches required for
+    non-native Airport Broadcom Wi-Fi cards.
+- BrcmFirmwareData
+  - For BCM4360 bluethooth firmware
 - BlueToolFixup
   - Fix bluethooth network stack for Monterey (macOS 12)
 

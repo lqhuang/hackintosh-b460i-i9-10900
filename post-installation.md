@@ -283,3 +283,31 @@ For `ROM`, use the MAC Address of the network interface, lowercase, and without
 References:
 
 1. https://dortania.github.io/OpenCore-Post-Install/universal/iservices.html
+
+## (Suggestive) Fixing BCM4360 wireless driver
+
+Since BCM4360 series wireless card is natively supported by macOS, we have to
+block/remove `AirPortBrcm4360_Injector.kext` plugins after macOS 11+. The
+simplest way is just delete it under plugins folder
+
+> In 11+ class AirPortBrcm4360 has been completely removed. Using of injector
+> kext with such class name and matched vendor-id:device-id blocks loading of
+> original airport kext. To address this issue and keep compatibility with older
+> systems injectors for AirPortBrcm4360 and AirPortBrcmNIC were removed from
+> main Info.plist file. Instead, the two new kext injectors are deployed in
+> PlugIns folder: AirPortBrcm4360_Injector.kext and
+> AirPortBrcmNIC_Injector.kext. **You have to block (or remove)
+> AirPortBrcm4360_Injector.kext in 11+.** In OpenCore you can specify MaxKernel
+> 19.9.9 for AirPortBrcm4360_Injector.kext. In Clover you can have two different
+> AirportBrcmFixup.kext, but in kext folder with version name 11 and 12
+> AirportBrcmFixup.kext must not contain AirPortBrcm4360_Injector.kext. You
+> don't need these injectors at all if your vendor-id:device-id is natively
+> supported by AirPortBrcmNIC or AirPortBrcm4360 (your device-id is included
+> into Info.plist in these kexts).
+
+References:
+
+1. https://github.com/acidanthera/AirportBrcmFixup
+2. https://www.tonymacx86.com/threads/hackintosh-big-sur-wifi-problem-with-fenvi-t919-bcm94360cd.308591/
+3. https://www.insanelymac.com/forum/topic/350364-airportbrcmfixupbcm94360hmb-maybe-broken-in-monterey-121-and-122/
+4. https://blog.daliansky.net/BCM94360Z4-m.2-NGFF-interface-four-antenna-notebook_small-host-dedicated-black-Apple-wireless-network-card-driver-tutorial.html

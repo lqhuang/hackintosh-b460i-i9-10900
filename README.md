@@ -10,7 +10,7 @@
 - SSD: WD Black SN770
 - Ethernet: Intel(R) I219-V
 - ~~Wireless & BT: Intel(R) Wi-Fi AX200~~
-- Wireless & BT: Broadcom BCM4360
+- Wireless & BT: Broadcom BCM94360Z3 (BCM4360 series)
 - Audio: Realtek(R) ALC1220P / ALC S1220A
 
 Bad news:
