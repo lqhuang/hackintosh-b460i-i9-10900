@@ -61,3 +61,7 @@ Enjoy!
 - [LightFocus/ASUS-ROG-STRIX-B460I-Hackintosh](https://github.com/LightFocus/ASUS-ROG-STRIX-B460I-Hackintosh)
 - [yqlbu/asus-b460i-strix-oc-efi](https://github.com/yqlbu/asus-b460i-strix-oc-efi)
 - [Hackintool 使用教程及插入姿势](https://blog.daliansky.net/Intel-FB-Patcher-tutorial-and-insertion-pose.html)
+- [macOS Ventura 13.0 安装中常见的问题及解决方法](https://blog.daliansky.net/Common-problems-and-solutions-in-macOS-Ventura-13.0-installation.html)
+- [使用 OpenCore 引导黑苹果](https://blog.xjn819.com/post/opencore-guide.html)
+- [daliansky/OC-little](https://github.com/daliansky/OC-little)
+- [5T33Z0/OC-Little-Translated](https://github.com/5T33Z0/OC-Little-Translated)
