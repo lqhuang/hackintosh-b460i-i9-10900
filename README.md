@@ -46,13 +46,19 @@ Enjoy!
 - [x] HEVC Decoder & Encoder
 - [x] HiDPI for dual 4K monitors
 
-## Performance tools
+## Performance benchmark
 
 - [iStat Menus](https://bjango.com/mac/istatmenus)
 - [Sensei](https://sensei.app)
 - [Intel® Power Gadget](https://www.intel.com/content/www/us/en/developer/articles/tool/power-gadget.html)
 - [VideoProc](https://www.videoproc.com/)
 - [Geekbench 5](https://www.geekbench.com/)
+
+## Tools
+
+- [corpnewt/OCConfigCompare](https://github.com/corpnewt/OCConfigCompare):
+  Python script to compare two plists and list missing keys in either.
+- [AppleSerialNumberInfo.com](www.appleserialnumberinfo.com/Desktop/index.php)
 
 ## Credits
 
